@@ -1,0 +1,13 @@
+package com.example.practicaspringrest3;
+
+import org.junit.jupiter.api.Test;
+import org.springframework.boot.test.context.SpringBootTest;
+
+@SpringBootTest
+class PracticaSpringRest3ApplicationTests {
+
+	@Test
+	void contextLoads() {
+	}
+
+}
