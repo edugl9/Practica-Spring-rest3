@@ -20,19 +20,17 @@ public class PracticaSpringRest3Application {
 	@Bean
 	public CommandLineRunner run(RestTemplate restTemplate) throws Exception {
 		return args -> {
-			ComentatioDTO comentario = restTemplate.getForObject("https://quoters.apps.pcfone.io/api/random", ComentatioDTO.class);
-			//ResponseEntity<ComentatioDTO> quote = restTemplate.getForObject("https://quoters.apps.pcfone.io/api/random", ComentatioDTO.class);
-			//if (quote.getStatusCode().is2xxSuccessful()){
-			//	System.out.println(quote);
-			//}
-			System.out.println(comentario.toString());
+			//ComentatioDTO comentario = restTemplate.getForObject("https://quoters.apps.pcfone.io/api/random", ComentatioDTO.class);
+			//System.out.println(comentario.toString());
 
-			// Forma de pegarle a otro servicio
+
+			// Forma de pegarle a otro servicio ejemplo al del examen
 			Cliente cliente=new Cliente();
 			cliente.setDni("11");
 			cliente.setNombre("Eduardo");
 			ResponseEntity<Cliente> clienteResponseEntity = restTemplate.postForEntity("http://localhost:8080/clientes",cliente,Cliente.class);
 			System.out.println("Respuesta a peticion" + clienteResponseEntity);
+
 		};
 	}
 }
